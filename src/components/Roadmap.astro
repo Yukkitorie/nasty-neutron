@@ -1,11 +1,148 @@
 ---
+import { Image } from "astro:assets";
+import Circle1 from '../assets/icons/circle_1.svg';
 
-
+const roadmapData = [
+    {
+        stage: "Stage 1: Community Formation",
+        details: [
+            "Create TONY meme culture",
+            "500 holders, 1,000 holders",
+            "2,000 subscribers on @stark_invest",
+            "Launch the full website upon reaching a $1M market cap"
+        ]
+    },
+    {
+        stage: "Stage 2: Market Growth",
+        details: [
+            "Achieve a $2M market cap",
+            "10,000 holders",
+            "15,000 subscribers on @stark_invest",
+            "Begin preparations for bot development",
+            "Increase token liquidity"
+        ]
+    },
+    {
+        stage: "Stage 3: Exchange Launch",
+        details: [
+            "Achieve a $10M market cap",
+            "20,000 holders",
+            "30,000 subscribers on @stark_invest",
+            "Listing on a centralized exchange",
+            "Start developing the bot"
+        ]
+    },
+    {
+        stage: "Stage 4: Staking Beta",
+        details: [
+            "Achieve a $25M market cap",
+            "40,000 holders",
+            "50,000 subscribers on @stark_invest",
+            "Beta launch of staking"
+        ]
+    },
+    {
+        stage: "Stage 5: Full Launch",
+        details: [
+            "Achieve a $50M market cap",
+            "60,000 holders",
+            "100,000 subscribers on @stark_invest",
+            "Full bot release: begin staking"
+        ]
+    }
+];
 ---
-<div>
-    Roadmap
+
+<div class="container">
+    {roadmapData.map((stage) => (
+        <div class="card">
+            <Image src={Circle1} alt="" class="img"/>
+
+            <div class="content">
+                <h3 class="title">{stage.stage}</h3>
+                <div class="details">
+                    {stage.details.map(detail => (
+                        <p class="text">{detail}</p>
+                    ))}
+                </div>
+            </div>
+        </div>
+    ))}
 </div>
 
-<style scoped>
+<style>
+    .container {
+        display: flex;
+        gap: 80px;
+        padding: 20px;
+        /* max-width: 1200px; */
+        margin: 0 auto;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
     
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 40px 20px;
+        min-height: 400px;
+        max-width: 500px;
+        border-radius: 20px;
+        background: #131B26;
+        @media (max-width: 1000px) {
+			flex-direction: column;
+		}
+    }
+
+    .img {
+        width: 200px;
+        height: auto;
+    }
+
+    .content {
+        max-width: 100%;
+    }
+
+    .title {
+        font-size: 44px;
+        color: white;
+        margin: 0 0 30px 0;
+        font-weight: 500;
+    }
+
+    .details {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .text {
+        font-size: 18px;
+        color: #8892b0;
+        margin: 0;
+    }
+
+    @keyframes pulse {
+        0%, 100% { 
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 0.5;
+        }
+        50% { 
+            transform: translate(-50%, -50%) scale(1.1);
+            opacity: 0.7;
+        }
+    }
+
+    @media (max-width: 1000px) {
+        .title {
+            font-size: 32px;
+        }
+
+        .text {
+            font-size: 18px;
+        }
+
+    }
 </style>

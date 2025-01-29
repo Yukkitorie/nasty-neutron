@@ -8,7 +8,14 @@
 		<title>Astro Basics</title>
 	</head>
 	<body>
-		<slot />
+		<div id="main">
+			<!-- <Header /> -->
+			<article class={"content"}>
+				<slot />
+			</article>
+			<!-- <MobileMenu /> -->
+			<!-- <Footer /> -->
+		</div>
 	</body>
 </html>
 
@@ -22,9 +29,35 @@
 		background-color: #111725;
 		color: rgb(128, 132, 143);
 		font-size: 18px;
+		padding: 0;
+		margin: 0;
+		font-family: DM Sans, sans-serif;
+		/* font-family: "Open Sans", sans-serif; */
+		a:hover,
+		a:visited,
+		a:link,
+		a:active {
+			text-decoration: none;
+			color: inherit;
+		}
 	}
-	h2 {
-		color: #fefefe !important;
+	#main {
+		display: flex;
+		min-height: 100vh;
+		flex-direction: column;
+	}
+	.content {
+		margin-top: var(--header);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		flex: 1;
+		&.offset {
+			padding: 0 12px;
+		}
+		@media (max-width: 768px) {
+			margin-top: 70px;
+		}
 	}
 	
 </style>

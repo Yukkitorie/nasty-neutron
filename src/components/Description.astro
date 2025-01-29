@@ -3,31 +3,61 @@ import { Image } from "astro:assets";
 import Tony from '../assets/tony.png';
 ---
 <div class="container">
-    <Image src={Tony} alt=""/>
-    <div class="title">Fun, Stark-Inspired Coin</div>
-    <div class="text">
-        $TONY memecoin for $TON, created in Memepad BLUM. The main goal is to create a strong community on the telegram social network. $TONY will develop together with $TON, becoming more stable and in demand every year.
-    </div>
-    <div class="text">
-        In the 1st quarter of 2025, $TONY will strive to become the most popular memecoin Memepad BLUM. With the help of $TONY, BLUM users will be able to trade and earn Meme Points (MP) and BLUM points without fear.
-    </div>
-    <div class="text">
-        After BLUM's listing, $TONY will continue to occupy a place in the hearts of the community, bringing a lot of interesting events and fun.
+    <Image src={Tony} alt="" class="img"/>
+    <div class="content">
+        <div class="title">Fun, Stark-Inspired Coin</div>
+        <div class="text">
+            $TONY memecoin for $TON, created in Memepad BLUM. The main goal is to create a strong community on the telegram social network. $TONY will develop together with $TON, becoming more stable and in demand every year.
+        </div>
+        <div class="text">
+            In the 1st quarter of 2025, $TONY will strive to become the most popular memecoin Memepad BLUM. With the help of $TONY, BLUM users will be able to trade and earn Meme Points (MP) and BLUM points without fear.
+        </div>
+        <div class="text">
+            After BLUM's listing, $TONY will continue to occupy a place in the hearts of the community, bringing a lot of interesting events and fun.
+        </div>
     </div>
 </div>
 
 <style scoped>
+    .img {
+        width: 440px;
+        height: 440px;
+        object-fit: contain;
+        @media (max-width: 1000px) {
+			width: 220px;
+            height: auto;
+		}
+    }
+    .content {
+        max-width: 720px;
+    }
     .container {
+        width: 100%;
+        margin: 50px 0;
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        gap: 50px;
+        padding:  0 12px;
         max-width: 1600px;
+        @media (max-width: 1000px) {
+			flex-direction: column;
+		}
     }
     .title {
         font-size: 44px;
+        margin: 0 8px;
+
         color: aliceblue;
+        @media (max-width: 1000px) {
+			font-size: 32px;
+		}
     }
     .text {
-        font-size: 18px;
-        margin: 15px 0;
+        font-size: 22px;
+        margin: 15px 8px;
+        @media (max-width: 1000px) {
+			font-size: 18px;
+		}
     }
 </style>
