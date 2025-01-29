@@ -1,11 +1,33 @@
 ---
-
-
+import { Image } from "astro:assets";
+import Tony from '../assets/tony.png';
 ---
-<div>
-    Description
+<div class="container">
+    <Image src={Tony} alt=""/>
+    <div class="title">Fun, Stark-Inspired Coin</div>
+    <div class="text">
+        $TONY memecoin for $TON, created in Memepad BLUM. The main goal is to create a strong community on the telegram social network. $TONY will develop together with $TON, becoming more stable and in demand every year.
+    </div>
+    <div class="text">
+        In the 1st quarter of 2025, $TONY will strive to become the most popular memecoin Memepad BLUM. With the help of $TONY, BLUM users will be able to trade and earn Meme Points (MP) and BLUM points without fear.
+    </div>
+    <div class="text">
+        After BLUM's listing, $TONY will continue to occupy a place in the hearts of the community, bringing a lot of interesting events and fun.
+    </div>
 </div>
 
 <style scoped>
-    
+    .container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1600px;
+    }
+    .title {
+        font-size: 44px;
+        color: aliceblue;
+    }
+    .text {
+        font-size: 18px;
+        margin: 15px 0;
+    }
 </style>
