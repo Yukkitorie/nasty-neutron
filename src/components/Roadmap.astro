@@ -75,7 +75,6 @@ const roadmapData = [
         display: flex;
         gap: 80px;
         padding: 20px;
-        /* max-width: 1200px; */
         margin: 0 auto;
         flex-wrap: wrap;
         justify-content: center;
@@ -87,14 +86,21 @@ const roadmapData = [
         align-items: center;
         text-align: center;
         padding: 40px 20px;
-        min-height: 400px;
-        max-width: 500px;
+        width: 400px; 
+        height: 500px; 
         border-radius: 20px;
         background: #131B26;
         @media (max-width: 1000px) {
-			flex-direction: column;
-		}
+            width: 350px;  
+            height: 450px;
+        }
+        transition: transform 0.3s ease 0.1s;
     }
+
+    .card:hover{
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
 
     .img {
         width: 200px;
@@ -103,6 +109,9 @@ const roadmapData = [
 
     .content {
         max-width: 100%;
+        flex: 1; 
+        display: flex;
+        flex-direction: column;
     }
 
     .title {
@@ -124,17 +133,6 @@ const roadmapData = [
         margin: 0;
     }
 
-    @keyframes pulse {
-        0%, 100% { 
-            transform: translate(-50%, -50%) scale(1);
-            opacity: 0.5;
-        }
-        50% { 
-            transform: translate(-50%, -50%) scale(1.1);
-            opacity: 0.7;
-        }
-    }
-
     @media (max-width: 1000px) {
         .title {
             font-size: 32px;
@@ -143,6 +141,5 @@ const roadmapData = [
         .text {
             font-size: 18px;
         }
-
     }
 </style>

@@ -1,156 +1,114 @@
 ---
-const segments = [
-  { name: 'Free Float', value: 50, color: '#22c55e' },
-  { name: 'Liquidity', value: 12.23, color: '#6366f1' },
-  { name: 'Presale', value: 10, color: '#facc15' },  
-  { name: 'Staking', value: 10, color: '#f87171' },
-  { name: 'Founder', value: 7.77, color: '#06b6d4' },
-  { name: 'Marketing', value: 5, color: '#a855f7' },
-  { name: 'Developers', value: 5, color: '#ec4899' }
+import { Image } from "astro:assets";
+import pieChart from '../assets/icons/pieChart.svg';
+import circle_3 from '../assets/icons/circle_3.svg';
+const tokenomics = [
+{ name: 'Founder:', value: '7.8%' },
+{ name: 'Free Float:', value: '50.0%' },
+{ name: 'Liquidity:', value: '12.2%' },
+{ name: 'Pre-sale:', value: '10.0%' },
+{ name: 'Staking:', value: '10.0%' },
+{ name: 'Developers:', value: '5.0%' },
+{ name: 'Marketing:', value: '5.0%' }
 ];
-
-let cumulativePercent = 0;
-const processedSegments = segments.map(segment => {
-  const startPercent = cumulativePercent;
-  cumulativePercent += segment.value;
-  
-  // Convert to coordinates for SVG arc
-  const startAngle = (startPercent * 3.6) - 90;
-  const endAngle = ((startPercent + segment.value) * 3.6) - 90;
-  
-  const startRadians = (startAngle * Math.PI) / 180;
-  const endRadians = (endAngle * Math.PI) / 180;
-  
-  const radius = 150;
-  const centerX = 300;
-  const centerY = 300;
-  
-  // Calculate points for the arc
-  const x1 = centerX + radius * Math.cos(startRadians);
-  const y1 = centerY + radius * Math.sin(startRadians);
-  const x2 = centerX + radius * Math.cos(endRadians);
-  const y2 = centerY + radius * Math.sin(endRadians);
-  
-  // Calculate label position
-  const labelAngle = (startAngle + endAngle) / 2;
-  const labelRadians = (labelAngle * Math.PI) / 180;
-  const labelRadius = radius * 0.7;
-  const labelX = centerX + labelRadius * Math.cos(labelRadians);
-  const labelY = centerY + labelRadius * Math.sin(labelRadians);
-  
-  return {
-    ...segment,
-    path: `M ${x1},${y1} A ${radius},${radius} 0 ${segment.value > 50 ? 1 : 0} 1 ${x2},${y2}`,
-    labelX,
-    labelY
-  };
-});
 ---
 
-<div class="chart-container">
-  <h2 class="title">Tokenomics $TONY</h2>
-  <div class="total-supply">
-    Total Supply: 1 Billion
-  </div>
-    <!-- <div class="legend">
-      {segments.map((segment) => (
-        <div class="legend-item">
-          <span class="legend-color" style={`background-color: ${segment.color}`}></span>
-          <span class="legend-text">{segment.name} {segment.value}%</span>
-        </div>
-      ))}
-    </div> -->
-
-    
-  
-
+<div class="wrapper">
+    <div class="pie_diagram">
+        <Image src={pieChart} alt="" class="pie-img"/>
+    </div>
+    <div class="token-list">
+        {tokenomics.map(token => (
+            <div class="token-item">
+                <div class="token-info">
+                    <Image src={circle_3} alt="" class="img"/>
+                    <span class="token-name">{token.name} </span>
+                    <span class="token-value">{token.value}</span>
+                </div>
+            </div>
+        ))}
+    </div>
 </div>
 
 <style>
-.chart-container {
-  max-width: 1600px;
-  padding: 20px;
-  width: 100%;
-  font-family: system-ui, -apple-system, sans-serif;
-}
+    .wrapper {
+        display: flex;
+        align-items: center;
+        gap: 20rem;
+        padding: 1.5rem;
+    }
 
-.title {
-  text-align: center;
-  font-size: 2rem;
-  color: #111827;
-}
+    .pie_diagram {
+        flex: 0 0 auto;
+        width: 700px;
+        height: 650px;
+    }
 
-.chart-content {
-    /* display: grid; */
-  gap: 20px;
-  align-items: center;
-    /* grid-template-columns: 1.5fr 0.5fr; */
-}
+    .pie-img {
+        
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
 
-.legend {
-    width: 500px;
-}
+    .token-list {
+        flex: 0 0 auto;
+        padding: 5rem;
+    }
 
-.legend-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 12px;
-  width: 400px;
+    .token-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.75rem;
+    }
 
-}
+    .token-item:last-child {
+        margin-bottom: 0;
+    }
 
-.legend-color {
-  width: 24px;
-  height: 24px;
-  border-radius: 4px;
-  color: aliceblue;
-}
+    .token-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+        opacity: 0.9;
+        gap: 0.5rem;
+    }
 
-.legend-text {
-  font-size: 1.6rem;
-  color: #acc2e6;
-}
+    .img {
+        width: 24px;
+        height: auto;
+    }
 
-.donut-chart {
-  width: 35vw;
-}
+    .token-name, 
+    .token-value {
+        font-size: 1.5rem;
+    }
 
-.donut {
-  width: 100%;
-  height: auto;
-}
+    @media (max-width: 1399px) {
+        .wrapper {
+            padding: 0;
+            gap: 0;
+        }
+    }
+    @media (max-width: 1060px) {
+        .token-name, 
+    .token-value {
+        font-size: 1.2rem;
+    }
+        
+        .wrapper {
+            flex-direction: column;
+            padding: 0;
+            gap: 0;
+        }
 
-.segment {
-  transition: stroke-width 0.2s;
-}
-
-.segment:hover {
-  stroke-width: 45;
-}
-
-.percentage {
-  font-size: 16px;
-  font-weight: bold;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-}
-
-.total-supply {
-  text-align: center;
-  font-size: 2.5rem;
-  color: #4b5563;
-}
-
-@media (max-width: 768px) {
-  .chart-content {
-    flex-direction: column-reverse;
-  }
-  
-  .legend {
-    flex: none;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 8px;
-  }
-}
+        .pie_diagram {
+            width: 370px;
+            height: 370px;
+        }
+        .pie-img {
+            margin-top: 1.5rem;
+        }
+    }
+</style>
