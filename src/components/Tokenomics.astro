@@ -3,15 +3,17 @@ import { Image } from "astro:assets";
 import pieChart from '../assets/icons/pieChart8.svg';
 import circle_3 from '../assets/icons/circle_3.svg';
 const tokenomics = [
-{ name: 'Founder:', value: '7.8%' },
 { name: 'Free Float:', value: '50.0%' },
 { name: 'Liquidity:', value: '12.2%' },
+{ name: 'Founder:', value: '7.8%' },
 { name: 'Pre-sale:', value: '10.0%' },
 { name: 'Staking:', value: '10.0%' },
 { name: 'Developers:', value: '5.0%' },
 { name: 'Marketing:', value: '5.0%' }
 ];
 ---
+
+<div class="container">
 <div class="card">
 <div class="wrapper">
     <div class="pie_diagram">
@@ -30,12 +32,18 @@ const tokenomics = [
     </div>
 </div>
 </div>
+</div>
+
+
 <style>
+    .container{
+        padding-top: 50px;
+    }
     .card{
         width: 100%;
         background-color: #131B26;
         border-radius: 1rem; /* Rounded corners for the card */
-        padding: 2rem; /* Padding inside the card */
+        padding: 0rem; /* Padding inside the card */
         box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); /* Subtle shadow */
         max-width: 1200px; /* Set a maximum width for the card */
         margin: 2rem auto; /* Center the card on the page */
@@ -101,13 +109,13 @@ const tokenomics = [
         }
     }
     @media (max-width: 1060px) {
-        .token-name, 
+    .token-name, 
     .token-value {
         font-size: 1.2rem;
     }
-        
         .wrapper {
             flex-direction: column;
+            justify-content: center;
             padding: 0;
             gap: 0;
         }
