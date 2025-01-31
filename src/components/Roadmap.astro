@@ -94,11 +94,15 @@ const roadmapData = [
             width: 350px;  
             height: 450px;
         }
+        @media screen (max-width: 400px) {
+            width: 300px;  
+            height: 450px;
+        }
         transition: transform 0.3s ease 0.1s;
     }
 
     .card:hover{
-            transform: scale(1.05);
+            transform: scale(1.02);
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
         }
 
@@ -136,6 +140,9 @@ const roadmapData = [
     @media (max-width: 1000px) {
         .title {
             font-size: 32px;
+        }
+        .container{
+            padding: 0rem;
         }
 
         .text {

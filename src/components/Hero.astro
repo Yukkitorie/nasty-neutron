@@ -1,21 +1,31 @@
 ---
 import { Image } from "astro:assets";
-import heroImage from '../assets/heroImage.jpg';
+import heroImage from '../assets/heroImage1.webp';
 ---
 
 <div class="hero-container">
-    <Image src={heroImage} alt="TONY Hero Image" class="hero-img"/>
+<Image src={heroImage} alt="TONY Hero Image" class="hero-img"/>
+
+<div class="content-overlay">
+    <div class="wrapper">
+        <h1 class="title">coin</h1>
+        <p class="description">$TONY is a fun, Stark-inspired memecoin built on the TON blockchain. Join the community and be a part of the journey!</p>
+        <div class="button-container">
+            <a href="https://t.me/your_telegram" class="button button-primary">Join Telegram</a>
+            <a href="/buy" class="button button-secondary">Buy $TONY</a>
+        </div>
+    </div>
+</div>
 </div>
 
-<style scoped>
+<style>
 .hero-container {
-    max-width: 99vw;
+    max-width: 120vw;
     width: 100vw;  
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
+    position: relative;
 }
 
 .hero-img {
@@ -23,4 +33,111 @@ import heroImage from '../assets/heroImage.jpg';
     height: 100vh; 
     object-fit: cover;
 }
+
+.content-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, transparent 70%);
+    padding-bottom: 9rem; 
+}
+
+.wrapper {
+    max-width: 600px;
+    margin-left: 58%;
+    margin-bottom: 7%;
+    text-align: left;
+}
+
+.title {
+    color: white;
+    font-size: clamp(3rem, 8vw, 6rem);
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.description {
+    color: white;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.button-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start; 
+}
+
+.button {
+    padding: clamp(0.5rem, 2vw, 1rem) clamp(1rem, 3vw, 2rem);
+    border-radius: 8px;
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.button-primary {
+    background-color: #40A9FF;
+    color: white;
+}
+
+.button-secondary {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #1a1a1a;
+}
+@media (max-width: 768px) {
+    .hero-container {
+    position: relative;
+    width: 100%;
+    height: 33vh;
+    min-height: 45vh;
+    }
+
+    .hero-img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    }
+
+    .content-overlay {
+        display: flex;
+        background: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; 
+        padding: 0rem
+    }
+
+    .wrapper {
+    margin: 0 auto;
+    max-width: 90%;
+    }
+    .button-container {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    }
+    .button {
+    width: 100%;
+    text-align: center;
+    }   
+
+}
+
+
 </style>
