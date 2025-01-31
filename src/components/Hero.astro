@@ -1,21 +1,33 @@
 ---
 import { Image } from "astro:assets";
 import heroImage from '../assets/heroImage1.webp';
+import instagramIcon from '../assets/icons/instagram.svg';
+import xIcon from '../assets/icons/x.svg';
 ---
 
-<div class="hero-container">
-<Image src={heroImage} alt="TONY Hero Image" class="hero-img"/>
 
-<div class="content-overlay">
+<div class="hero-container">
+    <Image src={heroImage} alt="TONY Hero Image" class="hero-img"/>
+
+    <div class="content-overlay">
     <div class="wrapper">
         <h1 class="title">TONY coin</h1>
         <p class="description">$TONY is a fun, Stark-inspired memecoin built on the TON blockchain. Join the community and be a part of the journey!</p>
         <div class="button-container">
-            <a href="https://t.me/your_telegram" class="button button-primary">Join Telegram</a>
-            <a href="/buy" class="button button-secondary">Buy $TONY</a>
+        <a href="http://t.me/stark_invest" class="button button-primary">Join Telegram</a>
+        <a href="/buy" class="button button-secondary">Buy $TONY</a>
+        </div>
+        <div class="social-icons">
+        <a href="https:/https://www.instagram.com/memecointony" target="_blank" rel="noopener noreferrer">
+            <Image src={instagramIcon} alt="Instagram" class="social-icon" />
+        </a>
+        </a>
+        <a href="https://x.com/tonymemecoin?t=AP8YGEzpgsf9RWBzpesx4Q&s=09" target="_blank" rel="noopener noreferrer">
+            <Image src={xIcon} alt="X" class="social-icon" />
+        </a>
         </div>
     </div>
-</div>
+    </div>
 </div>
 
 <style scoped>
@@ -95,6 +107,32 @@ import heroImage from '../assets/heroImage1.webp';
 .button-secondary {
     background-color: rgba(255, 255, 255, 0.9);
     color: #1a1a1a;
+}
+
+.social-icons {
+  display: flex;
+  margin-left: 40px;
+  gap: 1rem;
+  margin-top: 2rem; /* Add some space above the icons */
+  justify-content: flex-start; /* Center the icons horizontally */
+}
+
+.social-icon {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.2s;
+}
+
+.social-icon:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+@media (max-width: 768px) {
+  /* ... (rest of your existing media query styles) */
+
+  .social-icons {
+    margin-top: 1rem; /* Adjust spacing for smaller screens */
+  }
 }
 @media (max-width: 768px) {
     .hero-container {
