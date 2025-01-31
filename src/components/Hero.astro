@@ -1,11 +1,26 @@
 ---
-
-
+import { Image } from "astro:assets";
+import heroImage from '../assets/heroImage.jpg';
 ---
-<div>
-    Hero
+
+<div class="hero-container">
+    <Image src={heroImage} alt="TONY Hero Image" class="hero-img"/>
 </div>
 
 <style scoped>
-    
+.hero-container {
+    max-width: 99vw;
+    width: 100vw;  
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-img {
+    width: 100vw;
+    height: 100vh; 
+    object-fit: cover;
+}
 </style>
