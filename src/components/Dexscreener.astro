@@ -1,42 +1,79 @@
 ---
-
 ---
 <div class="content">
+  <h1>Chart</h1>
   <div id="dexscreener-embed">
-    <iframe src="https://dexscreener.com/ton/EQBptsGh6xzEVHZYkXrr3gVMeLlzrh9xpH64OzYlZO3s4KnT?embed=1&loadChartSettings=0&trades=0&tabs=0&chartLeftToolbar=0&chartDefaultOnMobile=1&chartTheme=dark&theme=dark&chartStyle=0&chartType=usd&interval=15">
-    </iframe>
+    <iframe src="https://dexscreener.com/ton/EQBptsGh6xzEVHZYkXrr3gVMeLlzrh9xpH64OzYlZO3s4KnT?embed=1&loadChartSettings=0&trades=0&tabs=0&chartLeftToolbar=0&chartDefaultOnMobile=1&chartTheme=dark&theme=dark&chartStyle=0&chartType=usd&interval=15"></iframe>
+  </div>
+  <a href="https://dexscreener.com/ton/eqbptsgh6xzevhzykxrr3gvmellzrh9xph64ozylzo3s4knt" target="_blank" class="dex-button">
+    TONY on DexScreener
+  </a>
 </div>
-</div>
 
-<style>
-
-  .content{
+<style scoped>
+  .content {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #131B26;
+    padding: 2rem 0;
   }
-  #dexscreener-embed iframe {
-    display: flex;
-    width: 75vw;
-    height: 75vh;
+ 
+  .title {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
   }
-
+ 
   #dexscreener-embed {
     position: relative;
     width: 100%;
-    padding-top: 10%;
-    padding-bottom: 10%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
   }
-
-  @media (min-width: 768px) {
-    #dexscreener-embed{
-      width: 100%;
+ 
+  #dexscreener-embed iframe {
+    width: 75vw;
+    height: 75vh;
+  }
+ 
+  .dex-button {
+    background-color: #1A365D;
+    color: whitesmoke;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+  }
+ 
+  .dex-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(64, 169, 255, 0.3);
+    background-color: #1890FF;
+  }
+ 
+  @media (max-width: 768px) {
+    .title {
+      font-size: 2rem;
+    }
+ 
+    #dexscreener-embed iframe {
+      width: 90vw;
+      height: 60vh;
     }
   }
-
-  @media (min-width: 1400px) {
-    #dexscreener-embed {
-      
+ 
+  @media (max-width: 480px) {
+    .title {
+      font-size: 1.75rem;
+    }
+ 
+    #dexscreener-embed iframe {
+      height: 50vh;
     }
   }
-
-</style>
+ </style>
