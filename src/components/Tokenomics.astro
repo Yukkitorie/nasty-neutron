@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import pieChart from '../assets/icons/pieChart.svg';
+import pieChart from '../assets/icons/pieChart8.svg';
 import circle_3 from '../assets/icons/circle_3.svg';
 const tokenomics = [
 { name: 'Founder:', value: '7.8%' },
@@ -12,7 +12,7 @@ const tokenomics = [
 { name: 'Marketing:', value: '5.0%' }
 ];
 ---
-
+<div class="card">
 <div class="wrapper">
     <div class="pie_diagram">
         <Image src={pieChart} alt="" class="pie-img"/>
@@ -29,13 +29,22 @@ const tokenomics = [
         ))}
     </div>
 </div>
-
+</div>
 <style>
+    .card{
+        width: 100%;
+        background-color: #131B26;
+        border-radius: 1rem; /* Rounded corners for the card */
+        padding: 2rem; /* Padding inside the card */
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        max-width: 1200px; /* Set a maximum width for the card */
+        margin: 2rem auto; /* Center the card on the page */
+    }
     .wrapper {
         display: flex;
         align-items: center;
-        gap: 20rem;
-        padding: 1.5rem;
+        gap: 2rem;
+        
     }
 
     .pie_diagram {
