@@ -70,7 +70,7 @@ import xIcon from '../assets/icons/x.svg';
     
     .wrapper {
         max-width: 600px;
-        margin-left: 58%;
+        margin-left: 58vw;
         margin-bottom: 7%;
         text-align: left;
     }
@@ -96,6 +96,7 @@ import xIcon from '../assets/icons/x.svg';
     }
     
     .button {
+        width: 25%;
         padding: clamp(0.5rem, 2vw, 1rem) clamp(1rem, 3vw, 2rem);
         border-radius: 8px;
         font-size: clamp(0.875rem, 1.5vw, 1rem);
@@ -110,11 +111,13 @@ import xIcon from '../assets/icons/x.svg';
     }
     
     .button-primary {
+        text-align: center;
         background-color: #1A365D;
         color: whitesmoke;
     }
     
     .button-secondary {
+        text-align: center;
         background-color: rgba(255, 255, 255, 0.9);
         color: #1a1a1a;
     }
@@ -212,13 +215,44 @@ import xIcon from '../assets/icons/x.svg';
         }
     }
 
-    @media screen (max-width 1352pc) {
-        
+    @media screen and (max-width: 1367px) {
+    .hero-container {
+        width: 100%;
+        position: relative;
     }
+    
+    .wrapper {
+        margin-left: 25%;
+        margin-bottom: 7%;
+        max-width: 70%;
+    }
+    
+    .social-icon {
+        width: 55px;
+        height: 55px;
+    }
+
+    .button-container {
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+
+    .social-icons.desktop-only {
+        justify-content: flex-start;
+        padding-left: 0;
+    }
+
+    .description{
+        font-size: 25px;
+    }
+    
+    .title{
+        font-size: 7rem;
+    }
+}
     
     @media (max-width: 339px) {
         .hero-container {
-            height: 100vh;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -256,11 +290,11 @@ import xIcon from '../assets/icons/x.svg';
         gap: 0.7rem;
         width: 100%;
         align-items: center;
-    }
+        }
     
         .button {
             padding: 0.5rem 1rem;
-            font-size: 0.875rem;
+            font-size: 1.5rem;
             width: 90%;
             text-align: center;
         }
