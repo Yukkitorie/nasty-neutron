@@ -5,7 +5,6 @@ import instagramIcon from '../assets/icons/instagram.svg';
 import xIcon from '../assets/icons/x.svg';
 ---
 
-
 <div class="hero-container">
     <Image src={heroImage} alt="TONY Hero Image" class="hero-img"/>
     
@@ -17,7 +16,6 @@ import xIcon from '../assets/icons/x.svg';
                 <a href="http://t.me/stark_invest" class="button button-primary">Join Telegram</a>
                 <a href="https://t.me/blum/app?startapp=memepadjetton_TONY_m2wwO-ref_O61N5Lno0J" class="button button-secondary">Buy $TONY</a>
             </div>
-            <!-- desktop soc icons -->
             <div class="social-icons desktop-only">
                 <a href="https://www.instagram.com/memecointony" target="_blank" rel="noopener noreferrer">
                     <Image src={instagramIcon} alt="Instagram" class="social-icon" />
@@ -37,8 +35,6 @@ import xIcon from '../assets/icons/x.svg';
         </div>
     </div>
 </div>
-
-<!-- Mobile soc icons -->
 
 <style scoped>
     .hero-container {
@@ -146,9 +142,54 @@ import xIcon from '../assets/icons/x.svg';
     .mobile-only {
         display: none;
     }
-    
-    @media (max-width: 768px) {
+
+    @media screen and (max-width: 1920px) {
+        .title {
+            font-size: clamp(3rem, 8vw, 6rem);
+        }
+        
+        .description {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+        }
+    }
+
+    @media screen and (max-width: 1367px) {
+        .hero-container{
+            
+        }
+        
+        .wrapper {
+            margin: 0;
+            padding-bottom: 10%;
+            max-width: 90%;
+            text-align: center;
+        }
+
+        .title, .description {
+            text-align: center;
+        }
+
+        .button-container {
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-icons.desktop-only {
+            justify-content: center;
+        }
+
+        .title {
+            font-size: clamp(4rem, 10vw, 7rem);
+        }
+        
+        .description {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+        }
+    }
+
+    @media screen and (max-width: 768px) {
         .hero-container {
+            min-height: 50vh; 
             position: relative;
             width: 100%;
             background-image: url('../assets/heroImage1.webp');
@@ -213,47 +254,23 @@ import xIcon from '../assets/icons/x.svg';
             width: 35px;
             height: 35px;
         }
+
+        .title {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+        }
+        
+        .description {
+            font-size: clamp(1rem, 4vw, 1.2rem);
+        }
+        
+        .button {
+            font-size: clamp(0.8rem, 3vw, 1rem);
+        }
     }
 
-    @media screen and (max-width: 1367px) {
-    .hero-container {
-        width: 100%;
-        position: relative;
-    }
-    
-    .wrapper {
-        margin-left: 25%;
-        margin-bottom: 7%;
-        max-width: 70%;
-    }
-    
-    .social-icon {
-        width: 55px;
-        height: 55px;
-    }
-
-    .button-container {
-        justify-content: flex-start;
-        gap: 1rem;
-    }
-
-    .social-icons.desktop-only {
-        justify-content: flex-start;
-        padding-left: 0;
-    }
-
-    .description{
-        font-size: 25px;
-    }
-    
-    .title{
-        font-size: 7rem;
-    }
-}
-    
     @media (max-width: 339px) {
         .hero-container {
-            min-height: 100vh;
+            min-height: 50vh;
             display: flex;
             align-items: center;
         }
@@ -275,26 +292,26 @@ import xIcon from '../assets/icons/x.svg';
         }
     
         .title {
-            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-size: clamp(1.8rem, 6vw, 2.5rem);
             margin-bottom: 0;
             text-align: center;
         }
     
         .description {
-            font-size: 0.85rem;
+            font-size: clamp(0.8rem, 3vw, 1rem);
             margin-bottom: 1rem;
             max-width: 90%
         }
 
         .button-container {
-        gap: 0.7rem;
-        width: 100%;
-        align-items: center;
+            gap: 0.7rem;
+            width: 100%;
+            align-items: center;
         }
     
         .button {
             padding: 0.5rem 1rem;
-            font-size: 1.5rem;
+            font-size: clamp(0.7rem, 3vw, 0.9rem);
             width: 90%;
             text-align: center;
         }
@@ -309,4 +326,4 @@ import xIcon from '../assets/icons/x.svg';
             height: 30px;
         }
     }
-    </style>
+</style>
