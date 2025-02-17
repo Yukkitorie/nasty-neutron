@@ -1,0 +1,88 @@
+---
+const title = "Добро пожаловать в Tony Stark Invest";
+const intro = `Здесь начнется ваш путь в мир криптовалют. Мемекоин $TONY станет вашим проводником, который поможет окунуться в этот удивительный мир блокчейна TON.`;
+const goal = `Цель $TONY стать инвестиционным крипто-инструментом, ведь с каждым годом криптовалюта становится популярней. Цифровые финансовые активы (ЦФА) это не далекое будущее, а настоящее.`;
+const advantages = [
+  "$TONY создан как фан токен персонажа Тони Старка киновселенной Марвел, но имеет инвестиционную начинку.",
+  "С ростом капитализации проекта инвесторы смогут не только приумножить вложенную сумму, но будут также получать ежемесячную прибыль, как % на остаток по счету вашей дебетовой банковской карты."
+];
+const guide = [
+  "Здесь вы узнаете какие бывают крипто-кошельки",
+  "как их пополнить и купить токены (цифровые монеты)",
+  "на каких биржах можно приобрести $TONY",
+  "что такое стейкинг монет и многое другое"
+];
+const outro = `Желаем приятного погружения в социальную сеть telegram и динамично развивающуюся экосистему TON.`;
+---
+
+
+<section class="longread">
+  <h1 class="title">{title}</h1>
+  <p class="paragraph">{intro}</p>
+  <p class="paragraph">{goal}</p>
+
+  <h2 class="subtitle">Преимущества $TONY</h2>
+  <ul class="list">
+    {advantages.map((item, index) => (
+      <li key={index} class="list-item">{item}</li>
+    ))}
+  </ul>
+
+  <h2 class="subtitle">Путеводитель по TON и $TONY</h2>
+  <ol class="list ordered">
+    {guide.map((item, index) => (
+      <li key={index} class="list-item">{item}</li>
+    ))}
+  </ol>
+
+  <p class="paragraph">{outro}</p>
+</section>
+
+<style>
+  .longread {
+    background-color: #131B26;
+    color: #F5F5F5;
+    padding: 30px;
+    border-radius: 15px;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: auto;
+  }
+
+  .title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 2.2rem;
+    margin-top: 24px;
+    margin-bottom: 16px;
+    text-align: left;
+    color: #F5F5F5;
+  }
+
+  .paragraph {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    text-align: justify;
+  }
+
+  .list {
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+
+  .ordered {
+    list-style-type: decimal;
+    padding-left: 40px;
+  }
+
+  .list-item {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+</style>

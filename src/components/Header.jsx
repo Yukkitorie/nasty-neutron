@@ -23,9 +23,7 @@ const Header = () => {
       }
     };
 
-    // scroll event (not work yet)
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -35,9 +33,9 @@ const Header = () => {
     <header className={`header ${isScrolled ? "scrolled" : ""}`}>
       <nav className="navbar">
         <div className="flex items-center justify-between h-16">
-          {/* logo?? */}
+          {/* logo */}
           <div className="flex-shrink-0">
-            <a href="#hero" className="logo">
+            <a href="/" className="logo">
               TONY COIN
             </a>
           </div>
@@ -45,17 +43,20 @@ const Header = () => {
           {/* desktop nav */}
           <div className="hidden md:block">
             <div className="nav-links">
-              <a href="#hero" onClick={handleLinkClick}>
+              <a href="/" onClick={handleLinkClick}>
                 Home
               </a>
-              <a href="#tokenadress" onClick={handleLinkClick}>
+              <a href="/#tokenadress" onClick={handleLinkClick}>
                 About
               </a>
-              <a href="#roadmap" onClick={handleLinkClick}>
+              <a href="/#roadmap" onClick={handleLinkClick}>
                 Roadmap
               </a>
-              <a href="#tokenomics" onClick={handleLinkClick}>
+              <a href="/#tokenomics" onClick={handleLinkClick}>
                 Tokenomics
+              </a>
+              <a href="/knowledge" onClick={handleLinkClick}>
+                Knowledge Base
               </a>
             </div>
           </div>
@@ -68,20 +69,23 @@ const Header = () => {
           </div>
         </div>
 
-        {/* mobile */}
+        {/* mobile menu */}
         {isMenuOpen && (
           <div className="md:hidden mobile-nav-links">
-            <a href="#hero" onClick={handleLinkClick}>
+            <a href="/" onClick={handleLinkClick}>
               Home
             </a>
-            <a href="#description" onClick={handleLinkClick}>
+            <a href="/#description" onClick={handleLinkClick}>
               About
             </a>
-            <a href="#roadmap" onClick={handleLinkClick}>
+            <a href="/#roadmap" onClick={handleLinkClick}>
               Roadmap
             </a>
-            <a href="#tokenomics" onClick={handleLinkClick}>
+            <a href="/#tokenomics" onClick={handleLinkClick}>
               Tokenomics
+            </a>
+            <a href="/knowledge" onClick={handleLinkClick}>
+              Knowledge Base
             </a>
           </div>
         )}
