@@ -1,16 +1,15 @@
-/* Header.css */
 .header {
   position: fixed;
+  top: 0;
   width: 100%;
-  z-index: 50;
+  z-index: 1000;
   border-bottom: 1px solid #2d3748;
   transition: all 0.3s ease;
-  background-color: #111725;
-  background-opacity: 1;
+  background-color: rgba(17, 23, 37, 1);
 }
 
 .header.scrolled {
-  background-opacity: 0.9;
+  background-color: rgba(17, 23, 37, 0.9);
 }
 
 .navbar {
@@ -59,4 +58,18 @@
 
 .mobile-nav-links a:hover {
   color: white;
+}
+
+@media (max-width: 768px) {
+  .navbar .nav-links {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: block;
+  }
+
+  .mobile-nav-links {
+    display: block;
+  }
 }
