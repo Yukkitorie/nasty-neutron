@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/Header.css";
 
 const Header = () => {
+  console.log("Header component rendered");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
