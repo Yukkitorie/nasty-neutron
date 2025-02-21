@@ -13,6 +13,8 @@ body {
   border-bottom: 1px solid #2d3748;
   transition: all 0.3s ease;
   background-color: rgba(17, 23, 37, 1);
+  margin: 0;
+  padding: 0;
 }
 
 .header.scrolled {
