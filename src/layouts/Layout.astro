@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.jsx';
 import circleFavicon from "../assets/icons/circle_2.svg";
+import type { onumber } from 'astro:schema';
 ---
 
 <!doctype html>
@@ -12,7 +13,7 @@ import circleFavicon from "../assets/icons/circle_2.svg";
     <title>TONY COIN</title>
   </head>
   <body>
-    <Header client:load />
+    <Header client:only />
     <div id="main">
       <article class={"content"}>
         <slot />
