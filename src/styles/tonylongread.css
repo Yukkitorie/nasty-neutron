@@ -28,7 +28,6 @@ body {
 }
 
 .intro-text {
-  max-width: 800px;
   margin: 0 auto;
   font-size: 1.2rem;
   line-height: 1.8;
@@ -36,6 +35,7 @@ body {
 
 .section-title {
   font-size: 2.5rem;
+  margin-top: 40px;
   margin-bottom: 40px;
   text-align: center;
 }
@@ -64,41 +64,40 @@ body {
   transform: translateY(-5px);
 }
 
+/* Карточки с якорными ссылками */
 .guide-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
-}
-
-/* Карточки с якорными ссылками */
-.guide-card {
-  display: flex;
-  box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 30px;
-  border-radius: 15px;
-  gap: 20px;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  color: inherit;
-  .guide-number {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #166cb6;
-  }
-  .guide-content {
-    min-height: 92px;
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-  }
-  .guide-content p {
-    font-size: 0.95rem;
-  }
-  .guide-content h3 {
-    background: linear-gradient(45deg, #166cb6, #4898df);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 1.2rem;
+  .guide-card {
+    display: flex;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 15px;
+    gap: 20px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    .guide-number {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #166cb6;
+    }
+    .guide-content {
+      min-height: 92px;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+    .guide-content p {
+      font-size: 0.95rem;
+    }
+    .guide-content h3 {
+      background: linear-gradient(45deg, #166cb6, #4898df);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 1.2rem;
+    }
   }
 }
 
@@ -119,9 +118,14 @@ body {
 }
 
 .warning {
-  border-left: 4px solid #ffa500;
+  border-left: 4px solid hsl(39, 100%, 50%);
 }
-
+.highlightdanger {
+  background-color: hsla(39, 100%, 50%, 0.05);
+  padding: 15px;
+  border-radius: 5px;
+  border-left: 4px solid hsl(39, 100%, 50%);
+}
 .info-title {
   font-size: 1.4rem;
   margin-bottom: 15px;
@@ -144,12 +148,6 @@ body {
   text-decoration: underline;
 }
 
-.founder-info {
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 20px;
-  border-radius: 10px;
-}
-
 .community-info {
   margin: 20px 0;
 }
@@ -169,12 +167,6 @@ body {
   padding: 15px;
   border-radius: 5px;
   border-left: 4px solid #166cb6;
-}
-
-.roadmap-section {
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 20px;
-  border-radius: 10px;
 }
 
 .roadmap-description {
