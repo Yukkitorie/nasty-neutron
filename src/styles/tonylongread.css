@@ -70,35 +70,41 @@ body {
   gap: 30px;
 }
 
+/* Карточки с якорными ссылками */
 .guide-card {
+  display: flex;
+  box-sizing: border-box;
   background: rgba(255, 255, 255, 0.05);
   padding: 30px;
   border-radius: 15px;
-  display: flex;
   gap: 20px;
   transition: all 0.3s ease;
   text-decoration: none;
   color: inherit;
+  .guide-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #166cb6;
+  }
+  .guide-content {
+    min-height: 92px;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  .guide-content p {
+    font-size: 0.95rem;
+  }
+  .guide-content h3 {
+    background: linear-gradient(45deg, #166cb6, #4898df);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.2rem;
+  }
 }
 
 .guide-card:hover {
   transform: translateY(-5px);
-  background: rgba(72, 152, 223, 0.1); /* Голубой при наведении */
-}
-
-.guide-number {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #166cb6;
-}
-
-.guide-content h3 {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-}
-
-.guide-content p {
-  font-size: 1rem;
+  background: rgba(72, 152, 223, 0.1);
 }
 
 .content-section {
@@ -148,20 +154,18 @@ body {
   margin: 20px 0;
 }
 
-.rules-list {
-  list-style-type: none;
-  padding-left: 20px;
+.list-descr {
+  font-size: 1.1rem;
 }
 
-.rules-list li::before {
-  content: "•";
-  color: #166cb6;
-  position: absolute;
-  left: -15px;
+.rules-list {
+  .point {
+    color: #166cb6;
+  }
 }
 
 .highlight {
-  background-color: rgba(72, 152, 223, 0.1); /* Голубой highlight */
+  background-color: rgba(72, 152, 223, 0.1);
   padding: 15px;
   border-radius: 5px;
   border-left: 4px solid #166cb6;
