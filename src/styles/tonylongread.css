@@ -420,7 +420,7 @@ body {
   text-decoration: none;
 }
 
-#buy-tony .subsection-title {
+.subsection-title {
   font-size: 2rem;
   margin: 40px 0 30px;
   color: #4898df;
@@ -767,6 +767,66 @@ body {
   font-size: 18px;
   font-weight: bold;
 }
+
+.conclusion-section {
+  text-align: center;
+  color: #e5e7eb;
+  padding: 40px 20px;
+  border-radius: 10px;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.community-cta p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.community-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #4898df;
+  text-decoration: none;
+  padding: 10px 15px;
+  background: #e5e7eb;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.community-link:hover {
+  background: #4898df;
+  color: #e5e7eb;
+}
+
+.telegram-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.community-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.community-benefits li {
+  margin-bottom: 8px;
+}
+
+.disclaimer {
+  font-size: 14px;
+  color: #ffcc00;
+  margin-top: 15px;
+}
+
 @media (max-width: 480px) {
   body {
     padding: 10px;
