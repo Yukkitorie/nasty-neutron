@@ -64,41 +64,45 @@ body {
   transform: translateY(-5px);
 }
 
-/* Карточки с якорными ссылками */
 .guide-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   gap: 30px;
-  .guide-card {
-    display: flex;
-    box-sizing: border-box;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 30px;
-    border-radius: 15px;
-    gap: 20px;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    color: inherit;
-    .guide-number {
-      font-size: 2rem;
-      font-weight: bold;
-      color: #166cb6;
-    }
-    .guide-content {
-      min-height: 92px;
-      font-size: 1.4rem;
-      margin-bottom: 10px;
-    }
-    .guide-content p {
-      font-size: 0.95rem;
-    }
-    .guide-content h3 {
-      background: linear-gradient(45deg, #166cb6, #4898df);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: 1.2rem;
-    }
-  }
+}
+
+.guide-card {
+  display: flex;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 15px;
+  gap: 20px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.guide-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #166cb6;
+}
+
+.guide-content {
+  min-height: 92px;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.guide-content p {
+  font-size: 0.95rem;
+}
+
+.guide-content h3 {
+  background: linear-gradient(45deg, #166cb6, #4898df);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.2rem;
 }
 
 .guide-card:hover {
@@ -120,12 +124,14 @@ body {
 .warning {
   border-left: 4px solid hsl(39, 100%, 50%);
 }
+
 .highlightdanger {
   background-color: hsla(39, 100%, 50%, 0.05);
   padding: 15px;
   border-radius: 5px;
   border-left: 4px solid hsl(39, 100%, 50%);
 }
+
 .info-title {
   font-size: 1.4rem;
   margin-bottom: 15px;
@@ -156,10 +162,8 @@ body {
   font-size: 1.1rem;
 }
 
-.rules-list {
-  .point {
-    color: #166cb6;
-  }
+.rules-list .point {
+  color: #166cb6;
 }
 
 .highlight {
@@ -173,6 +177,451 @@ body {
   margin: 0 auto 40px auto;
 }
 
+.steps-container {
+  display: grid;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.step-card {
+  display: flex;
+  align-items: start;
+  gap: 15px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+}
+
+.warning-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 165, 0, 0.1);
+}
+
+.exchange-guide {
+  margin-top: 40px;
+}
+
+.exchange-card {
+  padding: 25px;
+  margin: 20px 0;
+  background: rgba(72, 152, 223, 0.05);
+  border-radius: 12px;
+}
+
+.exchange-link {
+  display: inline-block;
+  margin: 15px 0;
+  color: #4898df;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.glow-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(72, 152, 223, 0.1) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  pointer-events: none;
+}
+
+.gradient-border {
+  border: 1px solid;
+  border-image: linear-gradient(45deg, #166cb6, #4898df) 1;
+  position: relative;
+}
+
+.checkmark-list li {
+  position: relative;
+  padding-left: 30px;
+  margin: 12px 0;
+}
+
+.checkmark-list .icon {
+  position: absolute;
+  left: 0;
+  color: #4898df;
+}
+
+.wallet-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+}
+
+.wallet-icon {
+  font-size: 2rem;
+  padding: 15px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hot {
+  background: rgba(255, 90, 90, 0.1);
+}
+
+.cold {
+  background: rgba(90, 190, 255, 0.1);
+}
+
+.exchange-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.exchange-card {
+  padding: 25px;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.blum-card {
+  background: linear-gradient(45deg, #1a1f2c, #2a3655);
+}
+
+.ston-card {
+  background: linear-gradient(45deg, #1a2c24, #2a5548);
+}
+
+.exchange-card:hover {
+  transform: translateY(-5px);
+}
+
+.cta-button {
+  background: linear-gradient(45deg, #166cb6, #4898df);
+  padding: 12px 25px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 15px;
+  font-weight: 600;
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.with-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.roadmap-block {
+  margin: 80px 0;
+  padding: 40px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.buy-section {
+  margin-top: 60px;
+  padding-top: 40px;
+}
+
+#buy-tony {
+  padding: 40px 0;
+}
+
+.wallet-guide {
+  display: grid;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.wallet-comparison {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 15px;
+}
+
+.wallet-type {
+  text-align: center;
+  padding: 25px;
+  flex: 1;
+}
+
+.step-by-step {
+  display: grid;
+  gap: 20px;
+  margin: 40px 0;
+}
+
+.step-number {
+  color: #4898df;
+  font-size: 1.8rem;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.community-cta {
+  text-align: center;
+  margin-top: 50px;
+  padding: 30px;
+  background: rgba(72, 152, 223, 0.1);
+  border-radius: 15px;
+}
+
+.tg-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  padding: 15px 25px;
+  border-radius: 50px;
+  background: #0088cc;
+  color: white;
+  text-decoration: none;
+}
+
+#buy-tony .subsection-title {
+  font-size: 2rem;
+  margin: 40px 0 30px;
+  color: #4898df;
+}
+
+.wallet-types {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.wallet-card {
+  padding: 25px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.hot-wallet {
+  border: 2px solid #ff6b6b;
+}
+
+.cold-wallet {
+  border: 2px solid #4dabf7;
+}
+
+.security-alert {
+  background: rgba(255, 76, 76, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.purchase-process .step {
+  display: flex;
+  gap: 20px;
+  margin: 25px 0;
+  padding: 20px;
+  background: rgba(72, 152, 223, 0.05);
+  border-radius: 12px;
+}
+
+.transfer-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 15px;
+}
+
+.exchange-comparison {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.exchange {
+  padding: 25px;
+  border-radius: 15px;
+}
+
+.blum {
+  background: rgba(110, 207, 151, 0.1);
+}
+
+.ston {
+  background: rgba(72, 152, 223, 0.1);
+}
+
+.note {
+  margin-top: 40px;
+}
+
+.exchange-header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(72, 152, 223, 0.2);
+  margin-bottom: 20px;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #4898df;
+  margin-bottom: 5px;
+}
+
+.type {
+  font-size: 0.9rem;
+  color: #6eb3f0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.exchange-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 15px;
+}
+.exchange-content ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 15px 0;
+}
+
+.exchange-content li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.exchange-content li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #4898df;
+  font-weight: bold;
+}
+
+.buy-instruction ol {
+  counter-reset: step;
+  padding-left: 0;
+}
+
+.buy-instruction li {
+  counter-increment: step;
+  margin-bottom: 15px;
+  padding-left: 35px;
+  position: relative;
+}
+
+.buy-instruction li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  background: #166cb6;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+.swap-guide {
+  position: relative;
+  padding: 20px 0;
+  margin: 20px 0;
+}
+
+.swap-step {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 25px;
+}
+
+.swap-step:last-child {
+  margin-bottom: 0;
+}
+
+.swap-step .number {
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  background: #166cb6;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+.exchange {
+  display: flex;
+  flex-direction: column;
+  min-height: 400px; /* Фиксированная минимальная высота */
+  position: relative; /* Добавляем для корректного позиционирования */
+}
+
+.exchange-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Занимает всё доступное пространство */
+  gap: 20px;
+  padding-bottom: 60px; /* Место для кнопки */
+}
+
+.cta-button {
+  position: absolute; /* Абсолютное позиционирование */
+  bottom: 25px; /* Отступ от нижнего края */
+  left: 25px; /* Выравнивание по левому краю */
+  right: 25px; /* Выравнивание по правому краю */
+  width: calc(100% - 50px); /* Ширина с учетом отступов */
+  margin-top: 0; /* Сбрасываем предыдущий отступ */
+  text-align: center; /* Центрируем текст */
+}
 @media (max-width: 768px) {
   .main-title {
     font-size: 2rem;
@@ -207,8 +656,117 @@ body {
   .guide-content p {
     font-size: 0.8rem;
   }
+
+  .step-card {
+    flex-direction: column;
+  }
+
+  .wallet-visual {
+    flex-direction: column;
+  }
+
+  .transfer-arrow {
+    transform: rotate(90deg);
+  }
+
+  .roadmap-block {
+    margin: 50px 0;
+    padding: 30px 0;
+  }
+
+  .buy-section {
+    margin-top: 40px;
+    padding-top: 30px;
+  }
+
+  .wallet-comparison {
+    flex-direction: column;
+  }
+
+  .step-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .wallet-types {
+    grid-template-columns: 1fr;
+  }
+
+  .transfer-visual {
+    padding: 20px;
+  }
+
+  .step {
+    flex-direction: column;
+  }
+
+  .exchange-comparison {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .exchange {
+    min-height: 400px;
+    padding: 20px;
+  }
 }
 
+.transfer-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.wallet {
+  padding: 20px;
+  border-radius: 12px;
+  width: 200px;
+  text-align: center;
+}
+
+.wallet.hot {
+  background: rgba(255, 90, 90, 0.1);
+}
+
+.wallet.cold {
+  background: rgba(90, 190, 255, 0.1);
+}
+
+.wallet-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.arrow-down {
+  font-size: 32px;
+  color: #4898df;
+  margin: 10px 0;
+}
+
+.transfer-info {
+  text-align: center;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.wallet-icon {
+  font-size: 24px;
+}
+
+.wallet-title {
+  font-weight: 500;
+}
+
+.wallet-amount {
+  font-size: 18px;
+  font-weight: bold;
+}
 @media (max-width: 480px) {
   body {
     padding: 10px;
