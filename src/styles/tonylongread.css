@@ -112,6 +112,8 @@ body {
 
 .content-section {
   margin-top: 80px;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .info-block {
