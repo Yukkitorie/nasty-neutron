@@ -916,3 +916,8 @@ body {
     padding-bottom: 70px;
   }
 }
+@media (max-width: 768px) {
+  :target {
+    scroll-margin-top: 70px; /* Высота вашего хедера */
+  }
+}
