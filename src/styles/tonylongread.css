@@ -112,7 +112,6 @@ body {
 
 .content-section {
   margin-top: 80px;
-  transform: translateZ(0);
   backface-visibility: hidden;
 }
 
@@ -920,6 +919,31 @@ body {
 }
 @media (max-width: 768px) {
   :target {
-    scroll-margin-top: 70px; /* Высота вашего хедера */
+    scroll-margin-top: 70px;
   }
+}
+#buy-tony .exchange-comparison {
+  overflow: visible !important;
+}
+
+#buy-tony .exchange {
+  min-height: unset !important;
+  height: auto !important;
+}
+#buy-tony {
+  scroll-snap-margin: 100px;
+  scroll-margin: 100px;
+}
+#buy-tony {
+  position: relative;
+  z-index: 1;
+}
+
+.exchange-screenshot {
+  z-index: 0 !important;
+}
+#buy-tony,
+[id] {
+  scroll-margin-top: 100px;
+  -webkit-scroll-margin-top: 100px;
 }
