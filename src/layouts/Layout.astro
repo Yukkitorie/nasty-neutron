@@ -23,19 +23,18 @@ import type { onumber } from 'astro:schema';
 </html>
 
 <style>
-	html,
-	body {
-		touch-action: manipulation;
-		margin: 0;
-		width: 100%;
-		height: 100%;
-		background-color: #111725;
-		color: rgb(128, 132, 143);
-		font-size: 18px;
-		padding: 0;
-		margin: 0;
-		scroll-behavior: smooth; 
-	}
+	html, body {
+    touch-action: manipulation;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh; /* вместо height: 100% */
+    background-color: #111725;
+    color: rgb(128, 132, 143);
+    font-size: 18px;
+    scroll-behavior: smooth;
+    overflow: auto !important;
+}
 	
 	#main {
 		display: flex;

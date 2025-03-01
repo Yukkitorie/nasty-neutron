@@ -947,3 +947,20 @@ body {
   scroll-margin-top: 100px;
   -webkit-scroll-margin-top: 100px;
 }
+/* Добавьте это в ваш tonylongread.css или общие стили */
+@media (max-width: 768px) {
+  [id] {
+    scroll-margin-top: 80px; /* Компенсация для фиксированного хедера */
+  }
+}
+
+/* Опционально: стили для плавного скролла */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
