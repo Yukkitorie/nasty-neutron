@@ -6,6 +6,7 @@ import founder from "../assets/foundertony.svg"
 import tonyblum from "../assets/tonyblummain.svg"
 import blumexchange from "../assets/blumexchange2.svg"
 import stonfiexchange from "../assets/stonfiexchange.svg"
+import SmoothScroll from '../components/SmoothScroll.astro';
 ---
   
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -383,7 +384,6 @@ import stonfiexchange from "../assets/stonfiexchange.svg"
 </div>
         <section id="buy-tony" class="content-section">
             <h2 class="section-title">Полное руководство по покупке $TONY</h2>
-               <!-- 1. Введение -->
     <div class="info-block">
         <h3 class="subsection-title">1. Мой кошелёк</h3>
         <div class="paragraph">
@@ -634,5 +634,5 @@ import stonfiexchange from "../assets/stonfiexchange.svg"
             </div>
         </div>
     </div>
+    <SmoothScroll / client:only>
 </section>
-<script src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
